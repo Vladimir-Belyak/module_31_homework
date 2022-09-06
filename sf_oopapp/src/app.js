@@ -2,8 +2,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles/style.css";
 import taskFieldTemplate from "./templates/taskField.html";
 import noAccessTemplate from "./templates/noAccess.html";
+import taskFooter from "./templates/taskFooter.html";
 import { User } from "./models/User";
-import { generateTestUser } from "./utils";
+import { displayTasks, generateTestUser } from "./utils";
 import { State } from "./state";
 import { authUser } from "./services/auth";
 
@@ -23,5 +24,8 @@ loginForm.addEventListener("submit", function (e) {
     ? taskFieldTemplate
     : noAccessTemplate;
 
+  
   document.querySelector("#content").innerHTML = fieldHTMLContent;
+  document.querySelector(".footer").innerHTML = taskFooter;
+    displayTasks(appState.currentUser);
 });

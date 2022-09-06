@@ -1,3 +1,15 @@
 #app-login-btn {
   width: 160px;
 }
+
+.field-tasks {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer {
+  display: flex;
+  background-color: #212529;
+  justify-content: space-between;
+  color: white;
+}
